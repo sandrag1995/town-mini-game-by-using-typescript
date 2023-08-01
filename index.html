@@ -11,97 +11,85 @@
 </head>
 <body class="m-5">
 <div class="toolbar bg-success d-flex">
-    <p>Gold: 100</p>
-    <p>Stone: 20</p>
-    <p>Wood: 20</p>
-    <p>Food: 20</p>
-    <p>Population: 10</p>
+    <p id="gold">Gold: 100</p>
+    <p id="stone">Stone: 20</p>
+    <p id="wood">Wood: 100</p>
+    <p id="food">Food: 20</p>
+    <p id="population">Population: 10</p>
 </div>
 <div class="gameContainer d-flex">
-    <div class="itemMenu d-flex flex-wrap flex1">
-        <div class="tent d-flex">
+    <div class="itemMenu d-flex flex-column flex1">
+        <div class="tent d-flex flex-wrap gap-2">
             <img src="https://i.redd.it/icezgp2os9i71.png" alt="">
-            <div class="info d-flex flex-column justify-content-center align-items-center">
-                <p><span>cost</span>: 10 gold,<br/>
+            <p><span>cost</span>: 10 gold,
                 10 stone, <br/>
                 10 wood<br/>
-                </p>
-                <p><span>Gives</span>: 2 population</p>
-                <p><span>Gives per second</span>: 1 wood,<br/>
-                    1 stone<br/>
-                </p>
-                <div class="buyOption">
+            </p>
+            <p><span>Gives</span>: 2 population</p>
+            <p><span>Gives per second</span>: 1 wood,<br/>
+                1 stone<br/>
+            </p>
+                <div class="buyOption buyTent">
                     <button>Buy</button>
                 </div>
-            </div>
         </div>
 
-        <div class="hut d-flex">
+        <div class="hut d-flex flex-wrap gap-2">
             <img src="https://i.redd.it/3zl80aj80fm61.png" alt="">
-            <div class="info d-flex flex-column justify-content-center align-items-center">
-                <p><span>cost</span>: 5 population,<br/>
-                    20 gold,<br/>
-                    20 stone, <br/>
-                    20 wood,<br/>
-                    10 food<br/>
-                </p>
-                <p><span>Gives</span>: 3 food</p>
+            <p><span>cost</span>: 5 population,
+                20 gold,<br/>
+                20 stone,
+                20 wood,
+                10 food<br/>
+            </p>
                 <p><span>Gives per second</span>: 3 food<br/></p>
-                <div class="buyOption">
+                <div class="buyOption buyHut">
                     <button>Buy</button>
                     <p><span>Requirements:</span> 1 built tent</p>
                 </div>
-            </div>
-
         </div>
 
-        <div class="house d-flex">
+        <div class="house d-flex flex-wrap gap-2">
             <img src="https://i.pinimg.com/originals/7c/40/fe/7c40fe9569b140918948e03c08b58d8d.png" alt="">
-            <div class="info d-flex flex-column justify-content-center align-items-center">
-                <p><span>cost</span>: 50 gold,<br/>
-                    70 stone, <br/>
-                    80 wood.<br/>
-                </p>
+            <p><span>cost</span>: 50 gold,
+                70 stone,
+                80 wood.<br/>
+            </p>
                 <p><span>Gives</span>: 10 population</p>
                 <p><span>Gives per second</span>: 1 gold<br/></p>
-                <div class="buyOption">
+                <div class="buyOption buyHouse">
                     <button>Buy</button>
-                    <p><span>Requirements:</span> 1 built tent,<br/>
+                    <p><span>Requirements:</span> 1 built tent,
                         1 built hut<br/>
                     </p>
                 </div>
-            </div>
-
         </div>
 
-        <div class="townHall d-flex">
+        <div class="townHall d-flex flex-wrap gap-2">
             <img src="https://pixeljoint.com/files/icons/full/city_hall_pj.gif" alt="">
-            <div class="info d-flex flex-column justify-content-center align-items-center">
-                <p><span>cost</span>: 100 population,<br/>
-                    150 gold,<br/>
-                    300 stone, <br/>
-                    200 wood,<br/>
-                    200 food<br/>
-                </p>
-                <p><span>Gives per second</span>: 1 food,<br/>
+            <p><span>cost</span>: 100 population,<br/>
+                150 gold,
+                300 stone, <br/>
+                200 wood,
+                200 food<br/>
+            </p>
+                <p><span>Gives per second</span>: 1 food,
                     2 stone,<br/>
-                    2 wood,<br/>
+                    2 wood,
                     3 gold<br/>
                 </p>
-                <div class="buyOption">
+                <div class="buyOption buyTownHall">
                     <button>Buy</button>
-                    <p><span>Requirements:</span> 3 built tents, <br/>
+                    <p><span>Requirements:</span> 3 built tents,
                     4 built huts, <br/>
                         5 built houses<br/>
                     </p>
                 </div>
-            </div>
-
         </div>
 
     </div>
 
-    <div class="townMap flex1"></div>
+    <div class="townMap flex3 d-flex flex-wrap"></div>
 
 </div>
 

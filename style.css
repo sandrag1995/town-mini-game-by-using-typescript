@@ -1,0 +1,41 @@
+body{
+    background-color: #535556;
+}
+
+.flex1{
+    flex: 1;
+}
+
+.toolbar p{
+    margin: 10px;
+}
+
+.itemMenu,
+.townMap{
+    padding: 10px;
+    border: 1px solid #313131;
+}
+
+.tent,
+.hut,
+.house,
+.townHall{
+    border: 2px solid gray;
+    border-radius: 20px;
+    padding: 5px;
+    margin: 10px;
+    height: 400px;
+}
+
+.itemMenu img{
+    height: 100px;
+}
+
+.itemMenu span{
+    font-weight: bold;
+}
+
+.buyOption button{
+    padding: 5px;
+    width: 100px;
+}

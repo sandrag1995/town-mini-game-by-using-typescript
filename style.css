@@ -1,9 +1,21 @@
 body{
     background-color: #535556;
+    position: relative;
 }
 
 .flex1{
     flex: 1;
+}
+
+.flex3{
+    flex: 3;
+}
+
+.toolbar{
+    top: 0;
+    position: sticky;
+    padding: 5px;
+    border: 5px solid #8a7c7c;
 }
 
 .toolbar p{
@@ -16,19 +28,27 @@ body{
     border: 1px solid #313131;
 }
 
+.itemMenu{
+    background-image: url("https://static.basicinvite.com/media/bi/36971/gamer-art-wallpaper-2x.jpg?q=1688069352");
+    height: 90vh;
+    overflow: scroll;
+}
+
 .tent,
 .hut,
 .house,
 .townHall{
+    background-color: rgba(0, 1, 10, 0.36);
+    color: navajowhite;
     border: 2px solid gray;
     border-radius: 20px;
     padding: 5px;
     margin: 10px;
-    height: 400px;
 }
 
+
 .itemMenu img{
-    height: 100px;
+    height: 75px;
 }
 
 .itemMenu span{
@@ -38,4 +58,26 @@ body{
 .buyOption button{
     padding: 5px;
     width: 100px;
+}
+
+.townMap{
+    background-image: url("https://images.squarespace-cdn.com/content/v1/551a19f8e4b0e8322a93850a/1566776697516-A69UYWW58V0871IQXG9C/Title_Image.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.townMap > .builtTent img{
+    height: 50px;
+}
+
+.townMap > .builtHut img{
+    height: 80px;
+}
+
+.townMap > .builtHouse img{
+    height: 90px;
+}
+
+.townMap > .builtTownHall img{
+    height: 150px;
 }

@@ -9,75 +9,85 @@ const wood = document.getElementById("wood");
 const food = document.getElementById("food");
 const population = document.getElementById("population");
 const townMap = document.querySelector(".townMap");
-let playerGold = 100;
-let playerStone = 20;
-let playerWood = 100;
-let playerFood = 20;
-let playerPopulation = 10;
-let tentCount = 0;
-let hutCount = 0;
-let houseCount = 0;
-let townHallCount = 0;
+const playerResources = {
+    gold: 100,
+    stone: 20,
+    wood: 100,
+    food: 20,
+    population: 10,
+};
+const buildingCounts = {
+    tent: 0,
+    hut: 0,
+    house: 0,
+    townHall: 0,
+};
 ///////////////////--------FUNCTIONS-----------//////////////////////////
 function playerStatus() {
-    gold.innerText = `Gold: ${playerGold}`;
-    stone.innerText = `Stone: ${playerStone}`;
-    wood.innerText = `Wood: ${playerWood}`;
-    food.innerText = `Food: ${playerFood}`;
-    population.innerText = `Population: ${playerPopulation}`;
+    gold.innerText = `Gold: ${playerResources.gold}`;
+    stone.innerText = `Stone: ${playerResources.stone}`;
+    wood.innerText = `Wood: ${playerResources.wood}`;
+    food.innerText = `Food: ${playerResources.food}`;
+    population.innerText = `Population: ${playerResources.population}`;
+}
+function createBuilding(imageUrl) {
+    townMap.innerHTML += `<div class="builtBuilding">
+<img src="${imageUrl}" alt="" style="height: 100px;">
+</div>`;
 }
 function upgradeOne() {
-    playerWood += 1;
-    playerStone += 1;
+    playerResources.wood += 1;
+    playerResources.stone += 1;
     playerStatus();
 }
 function upgradeTwo() {
-    playerFood += 3;
+    playerResources.food += 3;
     playerStatus();
 }
 function upgradeThree() {
-    playerGold += 1;
+    playerResources.gold += 1;
     playerStatus();
 }
 function upgradeFour() {
-    playerStone += 2;
-    playerWood += 2;
-    playerGold += 3;
+    playerResources.stone += 2;
+    playerResources.wood += 2;
+    playerResources.gold += 3;
     playerStatus();
 }
 ////////////////----------------BUTTONS ON CLICK---------------////////////////////////
 buyTentButton.onclick = () => {
-    if (playerGold >= 10 && playerStone >= 10 && playerWood >= 10) {
-        playerGold -= 10;
-        playerStone -= 10;
-        playerWood -= 10;
-        playerPopulation += 2;
-        tentCount += 1;
+    if (playerResources.gold >= 10 &&
+        playerResources.stone >= 10 &&
+        playerResources.wood >= 10) {
+        playerResources.gold -= 10;
+        playerResources.stone -= 10;
+        playerResources.wood -= 10;
+        playerResources.population += 2;
+        buildingCounts.tent += 1;
+        createBuilding("https://i.redd.it/icezgp2os9i71.png");
         setInterval(() => {
             upgradeOne();
         }, 1000);
-        townMap.innerHTML += `<div class="builtTent">
-<img src="https://i.redd.it/icezgp2os9i71.png" alt="">
-</div>`;
     }
     else {
         window.alert("you don't have enough resources");
     }
 };
 buyHutButton.onclick = () => {
-    if (tentCount >= 1) {
-        if (playerGold >= 20 && playerStone >= 20 && playerWood >= 20 && playerPopulation >= 5) {
-            playerGold -= 20;
-            playerStone -= 20;
-            playerWood -= 20;
-            playerPopulation -= 5;
-            hutCount += 1;
+    if (buildingCounts.tent >= 1) {
+        if (playerResources.gold >= 20 &&
+            playerResources.stone >= 20 &&
+            playerResources.wood >= 20 &&
+            playerResources.population >= 5) {
+            playerResources.gold -= 20;
+            playerResources.stone -= 20;
+            playerResources.wood -= 20;
+            playerResources.population -= 5;
+            buildingCounts.hut += 1;
+            createBuilding("https://i.redd.it/3zl80aj80fm61.png");
             setInterval(() => {
                 upgradeTwo();
             }, 1000);
-            townMap.innerHTML += `<div class="builtHut">
-<img src="https://i.redd.it/3zl80aj80fm61.png" alt="">
-</div>`;
         }
         else {
             window.alert("you don't have enough resources");
@@ -88,19 +98,19 @@ buyHutButton.onclick = () => {
     }
 };
 buyHouseButton.onclick = () => {
-    if (tentCount >= 1 && hutCount >= 1) {
-        if (playerGold >= 50 && playerStone >= 70 && playerWood >= 80) {
-            playerGold -= 50;
-            playerStone -= 70;
-            playerWood -= 80;
-            playerPopulation += 10;
-            houseCount += 1;
+    if (buildingCounts.tent >= 1 && buildingCounts.hut >= 1) {
+        if (playerResources.gold >= 50 &&
+            playerResources.stone >= 70 &&
+            playerResources.wood >= 80) {
+            playerResources.gold -= 50;
+            playerResources.stone -= 70;
+            playerResources.wood -= 80;
+            playerResources.population += 10;
+            buildingCounts.house += 1;
+            createBuilding("https://i.pinimg.com/originals/7c/40/fe/7c40fe9569b140918948e03c08b58d8d.png");
             setInterval(() => {
                 upgradeThree();
             }, 1000);
-            townMap.innerHTML += `<div class="builtHouse">
-<img src="https://i.pinimg.com/originals/7c/40/fe/7c40fe9569b140918948e03c08b58d8d.png" alt="">
-</div>`;
         }
         else {
             window.alert("you don't have enough resources");
@@ -111,27 +121,31 @@ buyHouseButton.onclick = () => {
     }
 };
 buyTownHallButton.onclick = () => {
-    if (tentCount >= 3 && hutCount >= 4 && houseCount >= 5) {
-        if (playerGold >= 150 && playerStone >= 300 && playerWood >= 200 && playerPopulation >= 100 && playerFood >= 200) {
-            playerGold -= 150;
-            playerStone -= 300;
-            playerWood -= 200;
-            playerPopulation -= 100;
-            playerFood -= 200;
-            townHallCount += 1;
+    if (buildingCounts.tent >= 3 &&
+        buildingCounts.hut >= 4 &&
+        buildingCounts.house >= 5) {
+        if (playerResources.gold >= 150 &&
+            playerResources.stone >= 300 &&
+            playerResources.wood >= 200 &&
+            playerResources.population >= 100 &&
+            playerResources.food >= 200) {
+            playerResources.gold -= 150;
+            playerResources.stone -= 300;
+            playerResources.wood -= 200;
+            playerResources.population -= 100;
+            playerResources.food -= 200;
+            buildingCounts.townHall += 1;
+            createBuilding("https://pixeljoint.com/files/icons/full/city_hall_pj.gif");
             setInterval(() => {
                 upgradeFour();
             }, 1000);
-            townMap.innerHTML += `<div class="builtTownHall">
-<img src="https://pixeljoint.com/files/icons/full/city_hall_pj.gif" alt="">
-</div>`;
         }
         else {
             window.alert("you don't have enough resources");
         }
     }
     else {
-        window.alert("Not enough tents, huts and houses!");
+        window.alert("Not enough tents, huts, and houses!");
     }
 };
 

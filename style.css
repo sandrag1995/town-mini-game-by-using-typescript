@@ -56,14 +56,17 @@ body{
 }
 
 .buyOption button{
+    border-radius: 10px;
     padding: 5px;
     width: 100px;
 }
 
 .townMap{
+    height: 90vh;
     background-image: url("https://images.squarespace-cdn.com/content/v1/551a19f8e4b0e8322a93850a/1566776697516-A69UYWW58V0871IQXG9C/Title_Image.png");
     background-position: center;
     background-size: cover;
+    overflow: scroll;
 }
 
 .townMap > .builtTent img{
@@ -72,12 +75,15 @@ body{
 
 .townMap > .builtHut img{
     height: 80px;
+    margin: 10px;
 }
 
 .townMap > .builtHouse img{
     height: 90px;
+    margin: 10px;
 }
 
 .townMap > .builtTownHall img{
     height: 150px;
+    margin: 10px;
 }

@@ -1,67 +1,58 @@
-body{
+body {
     background-color: #535556;
     position: relative;
 }
 
-.flex1{
+/* Flexbox styles */
+.flex1 {
     flex: 1;
 }
 
-.flex3{
+.flex3 {
     flex: 3;
 }
 
-.toolbar{
+/* Toolbar styles */
+.toolbar {
     top: 0;
     position: sticky;
     padding: 5px;
     border: 5px solid #8a7c7c;
 }
 
-.toolbar p{
+.toolbar p {
     margin: 10px;
 }
 
-.itemMenu,
-.townMap{
-    padding: 10px;
-    border: 1px solid #313131;
-}
-
-.itemMenu{
-    background-image: url("https://static.basicinvite.com/media/bi/36971/gamer-art-wallpaper-2x.jpg?q=1688069352");
-    height: 90vh;
-    overflow: scroll;
-}
-
-.tent,
-.hut,
-.house,
-.townHall{
+/* Item menu styles */
+.itemMenu {
     background-color: rgba(0, 1, 10, 0.36);
     color: navajowhite;
     border: 2px solid gray;
     border-radius: 20px;
     padding: 5px;
     margin: 10px;
+    height: 90vh;
+    overflow: scroll;
 }
 
-
-.itemMenu img{
+.itemMenu img {
     height: 75px;
 }
 
-.itemMenu span{
+.itemMenu span {
     font-weight: bold;
 }
 
-.buyOption button{
+/* Buy button styles */
+.buyOption button {
     border-radius: 10px;
     padding: 5px;
     width: 100px;
 }
 
-.townMap{
+/* Town map styles */
+.townMap {
     height: 90vh;
     background-image: url("https://images.squarespace-cdn.com/content/v1/551a19f8e4b0e8322a93850a/1566776697516-A69UYWW58V0871IQXG9C/Title_Image.png");
     background-position: center;
@@ -69,21 +60,31 @@ body{
     overflow: scroll;
 }
 
-.townMap > .builtTent img{
+/* Building styles */
+.townMap > .builtTent,
+.townMap > .builtHut,
+.townMap > .builtHouse,
+.townMap > .builtTownHall{
     height: 50px;
+    width: auto;
+    max-height: 150px;
+    margin: 10px;
 }
 
-.townMap > .builtHut img{
+.townMap > .builtHut img {
     height: 80px;
-    margin: 10px;
+    width: auto;
+    max-height: 200px;
 }
 
-.townMap > .builtHouse img{
-    height: 90px;
-    margin: 10px;
+.townMap > .builtHouse img {
+    height: 100px;
+    width: auto;
+    max-height: 250px;
 }
 
-.townMap > .builtTownHall img{
+.townMap > .builtTownHall img {
     height: 150px;
-    margin: 10px;
+    width: auto;
+    max-height: 350px;
 }

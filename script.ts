@@ -56,7 +56,7 @@ function upgradeFour():void {
 
 ////////////////----------------BUTTONS ON CLICK---------------////////////////////////
 
-buyTentButton.onclick = () => {
+buyTentButton.onclick = ():void => {
     if (playerGold >= 10 && playerStone >= 10 && playerWood >= 10){
 
         playerGold -= 10
@@ -79,7 +79,7 @@ buyTentButton.onclick = () => {
     }
 }
 
-buyHutButton.onclick = () =>{
+buyHutButton.onclick = ():void =>{
 
     if (tentCount >= 1){
 
@@ -110,7 +110,7 @@ buyHutButton.onclick = () =>{
 
 }
 
-buyHouseButton.onclick = () =>{
+buyHouseButton.onclick = ():void =>{
 
     if (tentCount >= 1 && hutCount >= 1){
 
@@ -141,7 +141,7 @@ buyHouseButton.onclick = () =>{
 
 }
 
-buyTownHallButton.onclick = () =>{
+buyTownHallButton.onclick = ():void =>{
 
     if (tentCount >= 3 && hutCount >= 4 && houseCount >= 5){
 
@@ -168,11 +168,10 @@ buyTownHallButton.onclick = () =>{
         }
 
     } else{
-        window.alert("Not enough tents,huts and houses!")
+        window.alert("Not enough tents, huts and houses!")
     }
 
 }
-
 
 
 

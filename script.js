@@ -131,6 +131,7 @@ buyTownHallButton.onclick = () => {
         }
     }
     else {
-        window.alert("Not enough tents,huts and houses!");
+        window.alert("Not enough tents, huts and houses!");
     }
 };
+
